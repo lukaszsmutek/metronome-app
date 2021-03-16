@@ -3,7 +3,17 @@ import './Metronome.css';
 
 class Metronome extends Component {
     render() {
-        return <div className="metronome">hi</div>
+        let bpm = 100;
+        let playing = false;
+
+        return (
+            <div className="Metronome">
+                <div className="bpm-slider">
+                    <h3>{bpm} bpm</h3>
+                    <input type="range" min="0" max="240"/>
+                </div>
+            </div>
+        )
     }
 }
 
