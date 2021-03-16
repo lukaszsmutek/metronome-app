@@ -12,6 +12,7 @@ class Metronome extends Component {
                     <h3>{bpm} bpm</h3>
                     <input type="range" min="0" max="240"/>
                 </div>
+                <button>{playing ?'stop' : 'start'}</button>
             </div>
         )
     }
