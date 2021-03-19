@@ -19,7 +19,7 @@ class Metronome extends Component {
         this.click2 = new Audio(click2);
     }
 
-    startStop =()=>{this.click1.play;}
+    startStop = ()=>{this.click1.play;}
 
     handleBpmChange = event => {
         const bpm = event.target.value;
