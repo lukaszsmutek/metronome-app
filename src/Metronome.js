@@ -27,7 +27,6 @@ class Metronome extends Component {
             this.timer = setInterval(
                 this.playClick, (60/this.state.bpm)*1000
             );
-
             this.setState(
                 {
                     count:0,
@@ -36,9 +35,20 @@ class Metronome extends Component {
                 this.playClick
             )
         }
-        
-        
-        this.click1.play()};
+
+        playClick = () =>{
+            const {count, beatsPerMeasure} = this.state;
+            if (count % beatsPerMeasure === 0) {
+                this.click2.play();
+              } else {
+                this.click1.play();
+              }
+
+              this.setState(state => ({
+                count: (state.count + 1) % state.beatsPerMeasure
+              }));
+        }
+};
 
     handleBpmChange = event => {
         const bpm = event.target.value;
